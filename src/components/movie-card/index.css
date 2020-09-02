@@ -1,0 +1,13 @@
+.background-default {
+  background-color: #fff;
+}
+
+.background-selected {
+  background: linear-gradient(
+    27deg,
+    rgb(255, 155, 33) 0%,
+    rgba(255, 73, 18, 0.81) 16%,
+    rgb(255, 67, 42) 46%,
+    rgba(255, 243, 217, 1) 100%
+  );
+}
