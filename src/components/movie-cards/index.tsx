@@ -6,11 +6,12 @@ import Col from "react-bootstrap/Col";
 
 export interface IPropsMoviesDeck {
   movies: Array<IPropsMovieCard>;
-
+  noDataMessage?: string;
 }
 
 export default function MovieCards(props: IPropsMoviesDeck) {
-  const { movies } = props;
+  const { movies,noDataMessage } = props;
+  if (!movies.length) return <h1> {noDataMessage}</h1>
   return (
     <Row>
       <CardDeck>

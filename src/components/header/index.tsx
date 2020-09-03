@@ -1,5 +1,7 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import "./index.css";
 
 interface IpropsDynamicHeader {
   text: string;
@@ -14,9 +16,11 @@ export default function DynamicHeader({
 }: IpropsDynamicHeader) {
   return (
     <Row>
-      <div className={containerClass}>
-        <h1 className={headerClass}>{text}</h1>
-      </div>
+      <Col>
+        <div className={containerClass}>
+          <h1 className={headerClass}>{text}</h1>
+        </div>
+      </Col>
     </Row>
   );
 }

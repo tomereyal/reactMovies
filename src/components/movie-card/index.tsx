@@ -6,7 +6,6 @@ import StarRating, { IpropsStarRating } from "../star-rating";
 import LikesBox, { IPropsLikesBox } from "../likes-box";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
-
 export interface IPropsMovieCard {
   title: string;
   poster: string;
@@ -17,7 +16,7 @@ export interface IPropsMovieCard {
   likes: number;
   movieId: string;
   moreInfoBaseUrl?: string;
-  removeMovie:Function
+  removeMovie: Function;
 }
 
 enum bgClassColors {
@@ -42,9 +41,13 @@ export default function MovieCard(props: IPropsMovieCard) {
           height: "26rem",
           margin: "3rem",
         }}
-        className={currentBgColor}
+        className={`${currentBgColor} card-style`}
       >
-        <RiDeleteBin5Line onClick={()=>{props.removeMovie(props.movieId)}}></RiDeleteBin5Line>
+        <RiDeleteBin5Line
+          onClick={() => {
+            props.removeMovie(props.movieId);
+          }}
+        ></RiDeleteBin5Line>
         <Card.Img
           variant="top"
           src={props.poster}
@@ -56,8 +59,8 @@ export default function MovieCard(props: IPropsMovieCard) {
             changeBgColor();
           }}
         >
-          <Card.Title>{props.title} </Card.Title>
-          <StarRating rating={props.rating} starColor = {props.starColor} />
+          <Card.Title style={{ height: "2.5rem" }}>{props.title} </Card.Title>
+          <StarRating rating={props.rating} starColor={props.starColor} />
           <Card.Text style={{ height: "1rem" }}>
             {`Type: ${props.type}`}
           </Card.Text>
@@ -66,8 +69,10 @@ export default function MovieCard(props: IPropsMovieCard) {
             {`Year: ${props.year}`}
           </Card.Text>
           <Card.Text style={{ height: "1rem" }}></Card.Text>
-
-          <Card.Link href="primary">Go</Card.Link>
+          <div className={"link-button"}>
+            {" "}
+            <Card.Link href="primary">Go</Card.Link>
+          </div>
         </Card.Body>
         <LikesBox likes={props.likes}></LikesBox>
       </Card>

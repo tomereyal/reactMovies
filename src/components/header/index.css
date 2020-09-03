@@ -1,0 +1,20 @@
+.Main-header-container {
+  height: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://fandomwire.com/wp-content/uploads/2018/08/Movies-background.png");
+  color: white;
+  font-size: 100px;
+  margin-bottom: 20px;
+}
+.Main-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 300px;
+  background-color: violet;
+  border-radius: 20px;
+}
